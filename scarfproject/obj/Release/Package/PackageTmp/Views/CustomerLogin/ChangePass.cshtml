@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "ChangePass";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="modal-body modal-spa" >
+    <div class="login-grids " >
+        <div class="login" style="direction:rtl">
+            <div id="submitdivagain" class="login-right" style="float:right">
+                <h3>ثبت نام</h3>
+                <form>
+                    
+                    <div class="sign-up">
+                        <h4>رمز عبور</h4>
+                        <input id="signup-password-again" type="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'رمز عبور';}" required="">
+
+                    </div>
+                    <div class="sign-up">
+                        <h4>تکرار رمز عبور:</h4>
+                        <input id="Rsignup-password-again" type="password" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'رمز عبور';}" required="">
+
+                    </div>
+                    <div class="sign-up">
+                        @*<input id="subscribesubmit"  type="submit" value="REGISTER NOW">*@
+                        @*<input id="subscribesubmitagain" class="submit" value="تایید">*@
+                        <a id="subscribesubmitagain" class="submit">تایید</a>
+                    </div>
+
+                </form>
+                <p id="lblsetnewpassSubmitagain" class="alertmess"></p>
+            </div>
+           
+            <div class="clearfix"></div>
+        </div>
+        @*<p>
+            By logging in you agree to our
+            <a href="#">Terms and Conditions</a> and
+            <a href="#">Privacy Policy</a>
+        </p>*@
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $(document).ready(function () {
+
+            function isValidPass(phonenumber) {
+                var pattern = /^[a-zA-Z0-9]{8,20}$/;
+                return pattern.test(phonenumber);
+            };
+
+
+            document.getElementById("subscribesubmitagain").onclick = function () {
+               
+                var newpass = $("#signup-password-again").val();
+                var newpassRP = $("#Rsignup-password-again").val();
+               @*var email = @ViewBag.email ;*@
+                //if (isValidPass(newpass) && newpass == newpassRP)
+                if ((newpass == newpassRP) && (isValidPass(newpass))) {
+                  
+                    $('#lblsetnewpassSubmitagain').text("درحال پردازش ...");
+                    $.ajax({
+                        url: '/CustomerLogin/SetNewPass',
+                        dataType: 'html',
+                        data: {
+                            pass: newpass
+                        },
+                        success: function (data) {
+
+
+                            if (data === "1") {
+                                $('#lblsetnewpassSubmitagain').text("رمز عبور با موفقیت تغییر کرد");
+                            }
+                            else {
+                                $('#lblsetnewpassSubmitagain').text("خطا، لطفاً با اپراتور تماس بگیرید");
+                                
+                            }
+
+
+                        },
+                        error: function () {
+                            $('#lblsetnewpassSubmitagain').text("خطا در سرور");
+                        }
+                    });
+                }
+            else {
+                   
+                    if (!isValidPass(newpass)) {
+                        $('#lblsetnewpassSubmitagain').append('رمز عبور باید حداقل 8 حرف باشد')
+                    }
+            else if (newpass != newpassRP) {
+                $('#lblsetnewpassSubmitagain').append('عدم مشابهت تکرار رمز عبور ')
+            }
+                   
+
+            }
+
+        }
+           
+        })
+    })
+</script>

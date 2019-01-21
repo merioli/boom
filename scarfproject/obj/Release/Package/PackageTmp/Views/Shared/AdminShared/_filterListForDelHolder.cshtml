@@ -1,0 +1,24 @@
+﻿
+@model  AdminPanel.ViewModel.FilterfordelViewModel
+
+@{
+    if (Model.Filtersfordel != null)
+    {
+        
+        
+        
+        @Html.DropDownListFor(m => m.SelectedFilterfordel, Model.Filtersfordel, "--", new { id = "filterfordelholder", style = "width:100%", @class = "DRPd" })
+
+
+
+    }
+    else
+    {
+        
+    }
+}
+
+
+
+
+

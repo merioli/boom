@@ -1,0 +1,470 @@
+﻿@model scarfproject.ViewModelPost.ProductListViewModel
+
+
+
+
+
+<script>
+
+    $('.showmedetail').click(function () {
+
+
+        var ID = this.id;
+        var url = "/Home/ProductDetail?id=" + ID;
+        window.location.href = url;
+    })
+    $('.addtocart').click(function () {
+        var ID = this.id;
+
+        //var pricetotal = document.getElementById("spanfortotal").textContent;
+        var tobeadded = $('.item_price', $(this).parent('div:first')).text();
+        //var counttotal = document.getElementById("simpleCart_quantityy").textContent;
+        //var final = parseInt(pricetotal, 10) + parseInt(tobeadded, 10);
+        //var finalcount = parseInt(counttotal, 10) + 1;
+        //$('#spanfortotal').text(final);
+        //$('#simpleCart_quantityy').text(finalcount)
+
+
+
+
+        $.ajax({
+            url: '/Home/addtocart',
+            dataType: 'html',
+            data: {
+                id: ID,
+                price: tobeadded
+
+            },
+            success: function (data) {
+                $.ajax({
+                    url: '/Home/gogetfinalprice',
+
+
+                    success: function (data) {
+                        $("#spanfortotal").text(data).toString("###,###")
+                        $("#spanfortotal2").text(data)
+
+                    },
+                    error: function () {
+
+                    }
+                });
+                $.ajax({
+                    url: '/Home/gogetfinalquantity',
+
+
+                    success: function (data) {
+                        $("#simpleCart_quantityy").text(data)
+
+                    },
+                    error: function () {
+
+                    }
+                });
+
+                toastr.options = {
+                    "debug": false,
+                    "positionClass": "toast-top-center",
+                    "onclick": null,
+                    "fadeIn": 300,
+                    "fadeOut": 1000,
+                    "timeOut": 5000,
+                    "extendedTimeOut": 1000,
+
+
+                }
+                toastr.success('محصول مورد نظر به سبد اضافه شد')
+
+
+
+            },
+            error: function () {
+
+            }
+        });
+
+
+    })
+
+</script>
+
+@{
+    if (Model.products != null)
+    {
+        foreach (var item in Model.products)
+        {
+            string ID = "o" + item.ID.ToString();
+            string addtocartid = "addtocart" + ID;
+            string price = item.oldPrice.ToString("###,###");
+
+
+
+            <style>
+                .product-men {
+                    float: right;
+                    border: 1px solid #eee;
+                    border-top: 0px;
+                    border-right: 0px;
+                }
+
+                    .product-men:hover {
+                        box-shadow: 0px 0px 5px 5px #eee;
+                    }
+            </style>
+            <div id=@ID class="col-md-3 product-men showmedetail">
+
+                <div>
+                    <div style="padding:15px">
+                        <div>
+                            <img src="@Url.Action("Thumbnail", "Home", new {filename = item.image })" alt="" class="pro-image-front " style="width:100%; padding:5px">
+                        </div>
+                        <div style="margin-top:10px">
+                            @*<style>
+                                    .titleholder {
+                                        white-space: nowrap;
+                                        width: 90%;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        margin: 20px auto;
+                                        text-align: center;
+                                        direction: rtl;
+                                    }
+                                </style>*@
+                            <div class="titleholder" style="white-space: nowrap; width: 90%; overflow: hidden; text-overflow: ellipsis; margin: 20px auto; text-align: center; ">
+                                <h5>@item.title</h5>
+
+                            </div>
+                        </div>
+                        <div class="item-info-product " style="direction:rtl">
+                            @{
+            if (item.color != "")
+            {
+                if (@item.colors != null)
+                {
+                    int i = 1;
+                    int count = Convert.ToInt32(@item.colors.Count);
+
+                    foreach (var color in @item.colors)
+                    {
+
+
+                        if (i < 5)
+                        {
+                            <span class="dot" style="display:inline-block ; width:10px; height:10px; background-color:@color; border-radius:100%; border: 1px solid @color"></span>
+                            i += 1;
+                        }
+                        else
+                        {
+                            int dif = count - i;
+                            if (dif != 0)
+                            {
+                                <h6 style="display: inline-block; color:blue; margin:8px; cursor:default; position:absolute ">    @dif.ToString() <i>+</i> <i>مورد </i></h6>
+
+                            }
+                            i = 1;
+                            break;
+                        }
+
+                    }
+                }
+
+            }
+
+
+                            }
+                        </div>
+
+                        <div style="margin-top:10px">
+
+                            <div class="row" style="margin:0px 15px">
+
+                                <div class="">
+                                    <div class="">
+                                        @if (item.price != item.oldPrice)
+                                        {
+                                            <del style="color:red">  @item.oldPrice  </del>
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin:0px 15px">
+
+                                <p style="display:inline-block">تومان</p>  <p style="display:inline-block">@item.price</p>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                @*<div class="men-pro-item simpleCart_shelfItem">
+                        <div class="men-thumb-item" >
+                            <img src="@Url.Action("Thumbnail", "Home", new {filename = item.image })" alt="" class="pro-image-front" style="max-width:220px; padding:5px">
+                            <img src="@Url.Action("Thumbnail", "Home", new {filename = item.image })" alt="" class="pro-image-back" style="max-width: 220px; padding: 5px; margin-left: 35px;">
+
+
+                            <div class="men-cart-pro">
+                                <div class="inner-men-cart-pro">
+                                    <a id=@ID class="link-product-add-cart showmedetail">مشاهده جزئیات</a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="item-info-product " style="direction:rtl">
+                            @{
+                                if (@item.colors != null)
+                                {
+                                    int i = 1;
+                               int count = Convert.ToInt32(@item.colors.Count);
+
+                                foreach (var color in @item.colors)
+                                {
+
+
+                                      if (i <5) {
+                                        <span class="dot" style="display:inline-block ; width:25px; height:25px; background-color:@color; border-radius:100%; border: 1px solid @color"></span>
+                                          i += 1;
+                                      }
+                                      else {
+                                          int dif = count - i ;
+                                          if (dif != 0) {
+                                           <h6 style="display: inline-block; color:blue; margin:8px; cursor:default; position:absolute ">    @dif.ToString() <i>+</i> <i>مورد </i></h6>
+
+                                          }
+                                          i = 1;
+                                          break;
+                                      }
+
+                                }
+                                }
+
+                           }
+                        </div>
+                        <div class="item-info-product ">
+                            <style>
+                                div.b {
+                                    white-space: nowrap;
+                                    width: 90%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    margin: 10px auto;
+                                    text-align: center;
+                                    direction: rtl;
+                                }
+                            </style>
+                            <div class="b">
+                                <h4>@item.title</h4>
+
+                            </div>
+                        </div>
+                        <div class="item-info-product ">
+                            <style>
+                                div.b {
+                                    white-space: nowrap;
+                                    width: 90%;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    margin: 10px auto;
+                                    text-align: center;
+                                    direction: rtl;
+                                }
+                            </style>
+                            <div class="b">
+                                <h5>
+                                    @item.desc
+                                </h5>
+
+                            </div>
+                        </div>
+                        <div class="item-info-product ">
+
+
+
+
+                            <div class="row" style="margin:0px 15px">
+                                <div class="" style="float:right">
+
+                                </div>
+                                <div class="" style="float:left">
+                                    <div class="" style="float:left">
+                                        @if (item.price != item.oldPrice)
+                                        {
+                                            <del style="color:red;margin-left:45px">@item.oldPrice </del>
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row" style="margin:0px 15px">
+
+                                 <span class="item_price" style="float:left; color:green">  @item.price.ToString("###,###")   <i style="float:left"> تومان &nbsp; </i> </span>
+
+                            </div>
+                            <div class="  row" style="cursor:pointer; margin: 5% 0px; background-color: #007d80; height: 50px; padding-top:10px ">
+                                <a id=@addtocartid style="color:white">&nbsp;<i class="glyphicon glyphicon-plus-sign"></i>سبد خرید</a>
+                            </div>
+
+                        </div>
+                    </div>*@
+            </div>
+
+
+
+
+
+
+
+        }
+
+    }
+    else
+    {
+        <p>موردی وجود ندارد</p>
+    }
+
+}
+
+
+
+<div class="col-lg-12 col-md-12">
+    @{
+        var total = Convert.ToInt32(Model.productsCounts);
+        var activ = Convert.ToInt32(Model.currentPage);
+        var activminus2 = activ - 2;
+        var activminus1 = activ - 1;
+        var activplus1 = activ + 1;
+        var activplus2 = activ + 2;
+
+
+        @*<ul class="pagination">
+
+                     @for (int i = 1; i < activ & activ - i < 4; i++)
+                     {
+                         <li class="pagingnumber"><a>@i</a></li>
+                     }
+                     <li class="active"><a>@activ </a></li>
+                     @for (int i = activ + 1; i <= total & i - activ < 4; i++)
+                     {
+                         <li class="pagingnumber"><a>@i</a></li>
+                     }
+            </ul>*@
+
+        if ((total - activ) > 3 & activ > 3)
+        {
+            <ul class="pagination">
+
+                <li><a>«</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>1</a></li>
+                <li><a>...</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activminus2</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activminus1</a></li>
+                <li class="active"><a>@activ</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activplus1</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activplus2</a></li>
+                <li> ...</li>
+                <li><a>@total</a></li>
+                <li><a>»</a></li>
+            </ul>
+        }
+        else if ((total - activ > 3) && !(activ > 3))
+        {
+            <ul class="pagination">
+
+                @for (int i = 1; i < activ; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberforall"><a>@i</a></li>
+                }
+                <li class="active"><a>@activ </a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activplus1</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activplus2</a></li>
+                <li><a href="#">...</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@total</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+
+        }
+        else if (!(total - activ > 3) && activ > 3)
+        {
+            <ul class="pagination">
+
+                <li><a>«</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>1</a></li>
+                <li><a>...</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activminus2</a></li>
+                <li style="cursor:pointer" class="pagingnumberforall"><a>@activminus1</a></li>
+                <li style="cursor:pointer" class="active"><a>@activ </a></li>
+                @for (int i = activ + 1; i <= total; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberforall"><a>@i</a></li>
+                }
+                <li><a>»</a></li>
+            </ul>
+
+        }
+        else if (total > 1 && !((total - activ) > 3) && !(activ > 3))
+        {
+
+            <ul class="pagination">
+
+                @for (int i = 1; i < activ; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberforall"><a>@i</a></li>
+                }
+                <li class="active"><a href="#">@activ</a></li>
+                @for (int i = activ + 1; i <= total; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberforall"><a>@i</a></li>
+                }
+
+            </ul>
+
+        }
+
+    }
+
+    <script>
+        $(".pagingnumberforall").click(function () {
+            alert("ddd");
+            var num = this.textContent;
+            $.ajax({
+                url: '/Home/allpaginationid',
+                dataType: 'html',
+                data: {
+                    id: num,
+                },
+                success: function (data) {
+                    if (data === "1") {
+                        $.ajax({
+                            url: '/Home/gogetproductlist',
+                            dataType: 'html',
+                            success: function (data) {
+
+                                $('#productlist').html(data);
+                                window.scrollTo(0, 500);
+                            },
+                            error: function () {
+                                alert("nashod")
+                            }
+                        });
+
+                    }
+                },
+                error: function () {
+
+                }
+
+            })
+        })
+
+    </script>
+
+
+</div>
+
+

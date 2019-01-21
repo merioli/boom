@@ -1,0 +1,442 @@
+E:\mine\textileproject\scarfproject\bin\scarfproject.dll.config
+E:\mine\textileproject\scarfproject\bin\scarfproject.dll
+E:\mine\textileproject\scarfproject\bin\scarfproject.pdb
+E:\mine\textileproject\scarfproject\bin\Antlr3.Runtime.dll
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.AspNet.dll
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.Core.dll
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OAuth.dll
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OpenId.dll
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\mine\textileproject\scarfproject\bin\EntityFramework.dll
+E:\mine\textileproject\scarfproject\bin\Microsoft.Data.Edm.dll
+E:\mine\textileproject\scarfproject\bin\Microsoft.Data.OData.dll
+E:\mine\textileproject\scarfproject\bin\Microsoft.Web.Infrastructure.dll
+E:\mine\textileproject\scarfproject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\mine\textileproject\scarfproject\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\mine\textileproject\scarfproject\bin\Newtonsoft.Json.dll
+E:\mine\textileproject\scarfproject\bin\System.Net.Http.Formatting.dll
+E:\mine\textileproject\scarfproject\bin\System.Spatial.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Helpers.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Http.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Http.OData.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Http.WebHost.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Mvc.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Optimization.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.Razor.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.WebPages.Deployment.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.WebPages.dll
+E:\mine\textileproject\scarfproject\bin\System.Web.WebPages.Razor.dll
+E:\mine\textileproject\scarfproject\bin\WebGrease.dll
+E:\mine\textileproject\scarfproject\bin\WebMatrix.Data.dll
+E:\mine\textileproject\scarfproject\bin\WebMatrix.WebData.dll
+E:\mine\textileproject\scarfproject\bin\EntityFramework.xml
+E:\mine\textileproject\scarfproject\bin\Newtonsoft.Json.xml
+E:\mine\textileproject\scarfproject\bin\System.Net.Http.Formatting.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.Helpers.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.Http.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.Http.WebHost.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.Mvc.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.Razor.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.WebPages.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.WebPages.Deployment.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.WebPages.Razor.xml
+E:\mine\textileproject\scarfproject\bin\WebMatrix.Data.xml
+E:\mine\textileproject\scarfproject\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\mine\textileproject\scarfproject\bin\WebMatrix.WebData.xml
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.AspNet.xml
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.Core.xml
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OAuth.xml
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OpenId.xml
+E:\mine\textileproject\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\mine\textileproject\scarfproject\bin\System.Web.Http.OData.xml
+E:\mine\textileproject\scarfproject\bin\Microsoft.Data.Edm.xml
+E:\mine\textileproject\scarfproject\bin\Microsoft.Data.OData.xml
+E:\mine\textileproject\scarfproject\bin\System.Spatial.xml
+E:\mine\textileproject\scarfproject\bin\de\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\es\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\it\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\mine\textileproject\scarfproject\bin\de\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\es\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\fr\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\it\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\ja\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\ko\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\ru\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\mine\textileproject\scarfproject\bin\de\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\es\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\fr\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\it\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\ja\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\ko\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\ru\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\zh-Hans\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\bin\zh-Hant\System.Spatial.resources.dll
+E:\mine\textileproject\scarfproject\obj\Release\scarfproject.csprojResolveAssemblyReference.cache
+E:\mine\textileproject\scarfproject\obj\Release\scarfproject.dll
+E:\mine\textileproject\scarfproject\obj\Release\scarfproject.pdb
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.dll.config
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.pdb
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Antlr3.Runtime.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.Core.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\EntityFramework.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.Edm.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.OData.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Newtonsoft.Json.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Net.Http.Formatting.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Spatial.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Helpers.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.OData.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.WebHost.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Mvc.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Optimization.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Razor.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Razor.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\WebGrease.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.Data.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.WebData.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\EntityFramework.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Newtonsoft.Json.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Net.Http.Formatting.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Helpers.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.WebHost.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Mvc.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Razor.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Razor.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.Data.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.WebData.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.Core.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.OData.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.Edm.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.OData.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\System.Spatial.xml
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\de\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\es\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\fr\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\it\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ja\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ko\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\ru\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.csprojResolveAssemblyReference.cache
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.pdb
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.dll.config
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.XmlSerializers.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.pdb
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.AspNet.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.Core.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\EntityFramework.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.Edm.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.OData.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Newtonsoft.Json.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Net.Http.Formatting.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Spatial.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Helpers.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.OData.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.WebHost.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Mvc.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Optimization.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Razor.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Razor.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\WebGrease.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.Data.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.WebData.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Antlr3.Runtime.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\EntityFramework.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Newtonsoft.Json.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Net.Http.Formatting.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Helpers.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.WebHost.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Mvc.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Razor.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.WebPages.Razor.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.Data.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\WebMatrix.WebData.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.AspNet.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.Core.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OAuth.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Web.Http.OData.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.Edm.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\Microsoft.Data.OData.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\System.Spatial.xml
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\de\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\es\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\fr\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\it\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ja\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ko\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\ru\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.csprojResolveAssemblyReference.cache
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.dll
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.pdb
+C:\Users\eli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.XmlSerializers.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\bin\scarfproject.XmlSerializers.dll
+C:\Users\merioli\Desktop\textileproject - Copy\scarfproject\obj\Release\scarfproject.XmlSerializers.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\scarfproject.dll.config
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\scarfproject.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\scarfproject.XmlSerializers.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\scarfproject.pdb
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.AspNet.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.Core.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\EntityFramework.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Data.Edm.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Data.OData.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Web.Infrastructure.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Newtonsoft.Json.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Net.Http.Formatting.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Spatial.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Helpers.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Http.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Http.OData.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Http.WebHost.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Mvc.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Optimization.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Razor.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Deployment.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Razor.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\WebGrease.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\WebMatrix.Data.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\WebMatrix.WebData.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Antlr3.Runtime.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\EntityFramework.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Newtonsoft.Json.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Net.Http.Formatting.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Helpers.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Http.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Http.WebHost.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Mvc.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Razor.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Deployment.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Razor.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\WebMatrix.Data.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\WebMatrix.WebData.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.AspNet.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.Core.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Web.Http.OData.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Data.Edm.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\Microsoft.Data.OData.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\System.Spatial.xml
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\de\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\es\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\it\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\de\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\es\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\fr\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\it\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ja\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ko\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ru\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\de\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\es\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\fr\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\it\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ja\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ko\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\ru\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\zh-Hans\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\bin\zh-Hant\System.Spatial.resources.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\obj\Release\scarfproject.csprojResolveAssemblyReference.cache
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\obj\Release\scarfproject.dll
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\obj\Release\scarfproject.pdb
+E:\WEBSITES\TEXTILE\textileprojectFINAL\scarfproject\obj\Release\scarfproject.XmlSerializers.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\scarfproject.dll.config
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\scarfproject.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\scarfproject.XmlSerializers.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\scarfproject.pdb
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.AspNet.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.Core.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\EntityFramework.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Data.Edm.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Data.OData.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Web.Infrastructure.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Newtonsoft.Json.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\PagedList.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\PagedList.Mvc.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Net.Http.Formatting.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Spatial.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Helpers.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Http.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Http.OData.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Http.WebHost.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Mvc.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Optimization.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Razor.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Deployment.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Razor.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\WebGrease.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\WebMatrix.Data.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\WebMatrix.WebData.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Antlr3.Runtime.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\PagedList.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\PagedList.Mvc.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\EntityFramework.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Newtonsoft.Json.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Net.Http.Formatting.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Helpers.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Http.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Http.WebHost.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Mvc.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Razor.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Deployment.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.WebPages.Razor.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\WebMatrix.Data.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\WebMatrix.WebData.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.AspNet.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.Core.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OAuth.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Web.Http.OData.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Data.Edm.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\Microsoft.Data.OData.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\System.Spatial.xml
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\de\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\es\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\fr\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\it\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ja\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ko\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ru\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\de\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\es\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\fr\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\it\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ja\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ko\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ru\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\de\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\es\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\fr\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\it\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ja\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ko\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\ru\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\zh-Hans\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\bin\zh-Hant\System.Spatial.resources.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\obj\Release\scarfproject.csprojResolveAssemblyReference.cache
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\obj\Release\scarfproject.dll
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\obj\Release\scarfproject.pdb
+E:\ALLPROJECT\WEBSITES\SCARF\textileprojectFINAL\scarfproject\obj\Release\scarfproject.XmlSerializers.dll

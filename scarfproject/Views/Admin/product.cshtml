@@ -1,0 +1,653 @@
+﻿@model AdminPanel.ViewModel.CatPageViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "مدیریت مطالب";
+   
+}
+
+
+
+@{
+    if (@ViewBag.msg == 1)
+    { 
+        <script>
+    toastr.options = {
+        "debug": false,
+        "positionClass": "toast-top-center",
+        "onclick": null,
+        "fadeIn": 300,
+        "fadeOut": 1000,
+        "timeOut": 5000,
+        "extendedTimeOut": 1000
+    }
+    toastr.success('محصول مورد نظر با موفقیت اضافه شد')
+             @ViewBag.msg == 4
+        </script>
+    }
+    if (@ViewBag.msg == 2)
+    { 
+             <script>
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-top-center",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000
+        }
+        toastr.error('خطا لطفاً مجدداً تلاش کنید')
+                 @ViewBag.msg == 4
+            </script>
+    }
+     if (@ViewBag.msg == 3)
+    { 
+             <script>
+        toastr.options = {
+            "debug": false,
+            "positionClass": "toast-top-center",
+            "onclick": null,
+            "fadeIn": 300,
+            "fadeOut": 1000,
+            "timeOut": 5000,
+            "extendedTimeOut": 1000
+        }
+        toastr.error('محصول با همین مشخصات وجود دارد')
+                 @ViewBag.msg == 4
+            </script>
+    }
+}
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 style=" display: inline-block;">مشاهده محصول</h4>
+                <ul class="nav navbar-left panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+
+                    <div class="">
+                        <div class="form-group rowholder ">
+                            <label class="control-label component" for="first-name">
+                                منو 1 :
+                            </label>
+                            <div class="component">
+                                @Html.DropDownListFor(m => m.SelectedCat, Model.Cats, "--", new { id = "catslist06", name = "catslist6", onchange = "Getsubcatid00(this)", style = "width:100%", @class = "DRPd" })
+                            </div>
+
+                            <script>
+
+                                function Getsubcatid00(catslist06) {
+
+                                   
+                                    var selectedValue = catslist06.value;
+
+
+                                    $.ajax({
+                                        url: '/Admin/getsubcatlist',
+                                        dataType: 'html',
+                                        data: {
+                                            catid: selectedValue,
+                                            levelfinder: "list"
+
+                                        },
+                                        success: function (data) {
+
+                                            $('#subcatholder06').html(data);
+
+                                        },
+                                        error: function () {
+                                            alert("nashod")
+                                        }
+                                    });
+                                }
+
+
+                            </script>
+
+                            <div id="subcatholder06" class="component">
+
+                            </div>
+
+                           
+                          
+                           
+
+                        </div>
+
+                        <div class="form-group ">
+                            <a id="Verify" class="lgnsubmitt">تایید</a>
+                            <script>
+                                $("#Verify").click(function () {
+
+                                    $.ajax({
+                                        url: '/Admin/GetTheListOfItems',
+                                        dataType: 'html',
+                                        success: function (data) {
+
+                                            $('#listholder').html(data);
+                                            $('#listholder').css("display", "block");
+                                        },
+                                        error: function () {
+                                            alert("nashod")
+                                        }
+                                    });
+                                })
+                               
+                            </script>
+                        </div>
+
+                        <div class="form-group rowholder" id="listholder" style="display:none">
+
+                        </div>
+                    </div>
+
+
+                   
+
+
+
+                    <div class="ln_solid"></div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+@if (ViewBag.page != null)
+{
+    <script>
+        var item = @ViewBag.page
+        
+    $.ajax({
+        url: '/Admin/GetTheListOfItems',
+        dataType: 'html',
+        data: {
+            page: item
+        },
+        success: function (data) {
+
+            $('#listholder').html(data);
+            $('#listholder').css("display", "block");
+
+        },
+        error: function () {
+            alert("nashod")
+        }
+    });
+    </script>
+}
+
+<div class="row">
+    
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 style="display:inline-block">تعریف محصول</h4>
+                <ul class="nav navbar-left panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+
+@using (Html.BeginForm("setproduct", "Admin", FormMethod.Post,
+    new { enctype = "multipart/form-data", id = "addproduct00" }))
+{
+
+
+
+                    <div class="form-group rowholder">
+                        <label class="control-label component" for="first-name">
+                            منو 1 :
+                        </label>
+                        <div class="component">
+                            @Html.DropDownListFor(m => m.SelectedCat, Model.Cats, "--", new { id = "catslist07", name = "catslist6", onchange = "Getsubcatid(this)", style = "width:100%", @class = "DRPd" })
+                        </div>
+
+                        <script>
+
+                            function Getsubcatid(catslist07) {
+
+
+                                var selectedValue = catslist07.value;
+
+
+                                $.ajax({
+                                    url: '/Admin/getsubcatlist',
+                                    dataType: 'html',
+                                    data: {
+                                        catid: selectedValue,
+                                        levelfinder: "def"
+                                    },
+                                    success: function (data) {
+
+                                        $('#subcatholder07').html(data);
+
+                                    },
+                                    error: function () {
+                                        alert("nashod")
+                                    }
+                                });
+                                $.ajax({
+                                    url: '/Admin/bringFilterForProductSet',
+                                    dataType: 'html',
+                                    data: {
+                                        catid: selectedValue
+                                    },
+                                    success: function (data) {
+
+                                        $('#filterholderforproduct').html(data);
+
+                                    },
+                                    error: function () {
+                                        alert("nashod")
+                                    }
+                                });
+                            }
+
+
+                        </script>
+
+                        <div id="subcatholder07" class="component">
+
+                        </div>
+
+                       
+
+                    </div>
+
+
+
+
+
+
+
+                 <div class="form-group rowholder">
+                     <input id="inputallfilterid" name="inputallfilterid" type="hidden" />
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name" style="text-align:right">
+                                نام :
+                            </label>
+                            @{
+                        if (Model.productmodel != null)
+                        {
+                             <div class="col-md-5 col-sm-5 col-xs-12">
+                                @Html.TextBox("productname", @Model.productmodel.productname, new { @class = "form-control col-md-7 col-xs-12" })  
+                           
+                                @*<input value=@Model.productmodel.productname type="text" id="productname" name="productname" required="required" class="form-control col-md-7 col-xs-12">*@
+                            </div>
+                        }
+                        else
+                        {
+                             <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input type="text" id="productname" name="productname" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                            }
+                           
+
+                        </div>
+                      
+                         <div class="form-group rowholder">
+                             <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                                 قیمت :
+                             </label>
+                             @{
+                        if (Model.productmodel != null)
+                        {
+                             <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input value=@Model.productmodel.productprice type="text" id="productprice" name="productprice" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                        else
+                        {
+                             <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input value="0" type="text" id="productprice" name="productprice" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                             }
+                           
+
+                        </div>
+                         <div class="form-group rowholder">
+                             <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                                 تخفیف :
+                             </label>
+                             @{
+                        if (Model.productmodel != null)
+                        {
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input  value=@Model.productmodel.productdiscount type="text" id="productdiscount" name="productdiscount" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input value="0" type="text" id="productdiscount" name="productdiscount" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                             }
+                            
+
+                        </div>
+    <div id="filterholderforproduct">
+        <div id="colorholder" class="form-group rowholder">
+            <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                رنگ :
+            </label>
+
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                @Html.DropDownListFor(m => m.SelectedColor, Model.Colores, "--", new { id = "productcolor", name = "productcolor", onchange = "Getcolorlist(this)", style = "width:100%", @class = "DRPd" })
+            </div>
+
+
+            <script>
+
+                function Getcolorlist(productcolor) {
+                    var selectedValue = productcolor.value;
+                    $("#colorholder").css("background-color", selectedValue);
+
+                }
+                $(document).ready(function () {
+                    $("#productcolor option").each(function () {
+                        if ($(this).val() != '') {
+                            $(this).css('background-color', $(this).val());
+                        }
+                    });
+                });
+
+
+            </script>
+
+            @*<div class="col-md-5 col-sm-5 col-xs-12">
+                <div >
+                    <input type="text" id="productcolor" name="productcolor" required="required" class="form-control col-md-7 col-xs-12">
+                </div>
+                <script src="//code.jquery.com/jquery-3.2.1.js"></script>
+                <script src="~/Scripts/bootstrap-colorpicker.js"></script>
+                <script>
+                    $(function () {
+                        $('#productcolor').colorpicker();
+                    });
+                </script>
+
+
+            </div>*@
+
+        </div>
+        <div id="colorholder" class="form-group rowholder">
+            <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                جنس :
+            </label>
+
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                @Html.DropDownListFor(m => m.Selectedtype, Model.types, "--", new { id = "producttype", name = "producttype", onchange = "Getcolorlist(this)", style = "width:100%", @class = "DRPd" })
+            </div>
+
+
+
+
+
+        </div >
+        <div id="colorholder" class="form-group rowholder">
+            <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                برند :
+            </label>
+
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                @Html.DropDownListFor(m => m.Selectedbrand, Model.brands, "--", new { id = "productbrand", name = "productbrand", onchange = "Getcolorlist(this)", style = "width:100%", @class = "DRPd" })
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+  
+
+                          <div class="form-group rowholder">
+                             <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                                 شماره گروه :
+                             </label>
+                              @{
+                        if (Model.productmodel != null)
+                        {
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input value=@Model.productmodel.SetID type="text" id="SetID" name="SetID" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input type="text" id="SetID" name="SetID" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        }
+                              }
+                            
+
+                        </div>
+                         @*<div class="form-group rowholder">
+                             <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                                 واحد :
+                             </label>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input type="text" id="productunit" name="productunit" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+
+                        </div>*@
+                        
+                         @*<div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12" >
+                                تگ :
+                            </label>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <input type="text" id="producttag" name="producttag" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+
+                        </div>*@
+                        <div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name" style="text-align: right">
+                                توضیحات :
+                            </label>
+                            @{
+                        if (Model.productmodel != null)
+                        {
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <textarea id="productdesc" required="required" class="form-control" name="productdesc" style="height:170px">@Model.productmodel.productdesc</textarea>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <textarea id="productdesc" required="required" class="form-control" name="productdesc" style="height:170px"></textarea>
+                            </div>
+                        }
+                            }
+                            
+                             
+                        </div>
+                        <div class="form-group rowholder">
+
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12 " style="text-align: right">آپلود عکس:</label>
+                            <input class="col-md-4 col-sm-4 col-xs-12 " style="display: inline-block; float: right" id="fileupload11" type="file" name="file" multiple="multiple" accept="image/*">
+                            <div class="col-md-4 col-sm-4 col-xs-12 " style="direction:rtl">
+                                @*<button class="btn btn-primary" type="button">Cancel</button>
+                                    <button class="btn btn-primary" type="reset">Reset</button>*@
+                                @* <button id="CRprocuct" class="btn btn-success" onclick="CRproductclicked(CRprocuct)">تایید</button>*@
+                               
+                                <div id="istrueimage" style="display:none">سلام</div>
+                                <script>
+                                    var _URL = window.URL;
+                                    $("#fileupload11").change(function (e) {
+                                        document.getElementById("istrueimage").innerHTML = "0";
+                                        var file, img;
+                                        for (var i = 0; i < this.files.length ; i++) {
+                                            if ((file = this.files[i])) {
+                                                size = this.files[i].size;
+                                                filename = this.files[i].filename;
+                                               
+                                                img = new Image();
+                                                img.onload = function () {
+                                                    // if (this.width !== 500 && this.height !== 500 ) {
+                                                     if (size > 1000000) {
+                                                        
+                                                        document.getElementById("istrueimage").innerHTML = "1";
+                                                        toastr.options = {
+                                                                    "debug": false,
+                                                                    "positionClass": "toast-top-center",
+                                                                    "onclick": null,
+                                                                    "fadeIn": 300,
+                                                                    "fadeOut": 1000,
+                                                                    "timeOut": 5000,
+                                                                    "extendedTimeOut": 1000
+                                                                }
+                                                        toastr.error(  'بیش از 1 مگا بایت است ' + ' سایز عکس')
+                                                    }
+                                                   // alert("Width:" + this.width + "   Height: " + this.height);//this will give you image width and height and you can easily validate here....
+                                                };
+                                                img.src = _URL.createObjectURL(file);
+                                            }
+                                        }
+                                        
+                                    });
+                           
+
+                                  
+                                  
+                                </script>
+                            </div>
+                        </div>
+                       
+                    }
+                    <p id="allfilterid" style="display:none"></p>
+                 
+                    <div class="form-group ">
+                        <a id="CRprocuct" class="lgnsubmitt">تایید</a>
+                        <script>
+                            $("#CRprocuct").click(function () {
+                                   
+                                    var FF = document.getElementById("istrueimage").innerHTML;
+                                    var name = productname.value;
+                                    var desc = productdesc.value;
+                                    var file = fileupload11.value;
+                                    var color = $("#productcolor").val();
+                                    var filters = $("#allfilterid").text();
+                                    $("#inputallfilterid").val(filters);
+                                   
+                                   // name != "" && file != "" && desc != "" && cat != ""
+                                    if (true) {
+                                       
+                                     
+                                        if (FF == "1") {
+                                            toastr.options = {
+                                                "debug": false,
+                                                "positionClass": "toast-top-center",
+                                                "onclick": null,
+                                                "fadeIn": 300,
+                                                "fadeOut": 1000,
+                                                "timeOut": 5000,
+                                                "extendedTimeOut": 1000
+                                            }
+                                            toastr.error('عکس های آپلود شده باید حجم کمتر از 1 مگا بایت داشته باشند')
+                                            //$("#addproduct00").submit();
+                                        }
+                                        else {
+                                           
+                                            $("#addproduct00").submit();
+                                        }
+
+                                    }
+                                    else {
+                                        toastr.options = {
+                                            "debug": false,
+                                            "positionClass": "toast-top-center",
+                                            "onclick": null,
+                                            "fadeIn": 300,
+                                            "fadeOut": 1000,
+                                            "timeOut": 5000,
+                                            "extendedTimeOut": 1000
+                                        }
+                                        toastr.error('تمامی موارد را کامل کنید')
+                                    }
+                                })
+
+                        </script>
+                    </div>
+
+                    <div class="ln_solid"></div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

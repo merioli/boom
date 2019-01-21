@@ -1,0 +1,137 @@
+﻿@model scarfproject.ViewModel.PaginationViewModel
+
+
+
+@{
+    var total = Convert.ToInt32(Model.totalrows);
+    var activ = Convert.ToInt32(Model.activerow);
+    var activminus2 = activ - 2;
+    var activminus1 = activ - 1;
+    var activplus1 = activ + 1;
+    var activplus2 = activ + 2;
+
+
+    @*<ul class="pagination">
+
+                 @for (int i = 1; i < activ & activ - i < 4; i++)
+                 {
+                     <li class="pagingnumber"><a>@i</a></li>
+                 }
+                 <li class="active"><a>@activ </a></li>
+                 @for (int i = activ + 1; i <= total & i - activ < 4; i++)
+                 {
+                     <li class="pagingnumber"><a>@i</a></li>
+                 }
+        </ul>*@
+
+    if ((total - activ) > 3 & activ > 3)
+    {
+        <ul class="pagination">
+
+            <li><a>«</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>1</a></li>
+            <li><a>...</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus2</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus1</a></li>
+            <li class="active"><a>@activ</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus1</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus2</a></li>
+            <li> ...</li>
+            <li><a>@total</a></li>
+            <li><a>»</a></li>
+        </ul>
+    }
+    else if ((total - activ > 3) && !(activ > 3))
+    {
+        <ul class="pagination">
+
+            @for (int i = 1; i < activ; i++)
+            {
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+            }
+            <li class="active"><a>@activ </a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus1</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus2</a></li>
+            <li><a href="#">...</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@total</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+
+    }
+    else if (!(total - activ > 3) && activ > 3)
+    {
+        <ul class="pagination">
+
+            <li><a>«</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>1</a></li>
+            <li><a>...</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus2</a></li>
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus1</a></li>
+            <li style="cursor:pointer" class="active"><a>@activ </a></li>
+            @for (int i = activ + 1; i <= total; i++)
+            {
+            <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+            }
+            <li><a>»</a></li>
+        </ul>
+
+    }
+    else if (total > 1 && !((total - activ) > 3) && !(activ > 3))
+    {
+
+        <ul class="pagination">
+
+            @for (int i = 1; i < activ; i++)
+            {
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+            }
+            <li class="active"><a href="#">@activ</a></li>
+            @for (int i = activ + 1; i <= total; i++)
+            {
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+            }
+
+        </ul>
+
+    }
+
+}
+
+<script>
+    $(".pagingnumberfornew").click(function () {
+        var num = this.textContent;
+        $.ajax({
+            url: '/Home/specialpaginationid',
+            dataType: 'html',
+            data: {
+                subcatid: num,
+            },
+            success: function (data) {
+                if(data === "1")
+                {
+                    $.ajax({
+                        url: '/Home/gogetproductlist',
+                        dataType: 'html',
+                        data: {
+                            id: "0"
+
+                        },
+                        success: function (data) {
+
+                            $('#newcontenthere').html(data);
+
+                        },
+                        error: function () {
+                            alert("nashod")
+                        }
+                    });
+                   
+                }
+            },
+            error: function () {
+
+            }
+       
+        })
+    })
+</script>

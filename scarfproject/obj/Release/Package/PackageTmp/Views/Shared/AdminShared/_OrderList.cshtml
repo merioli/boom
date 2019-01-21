@@ -1,0 +1,123 @@
+﻿@model PagedList.IPagedList<AdminPanel.ViewModel.orderdetail>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "لیست محصولات";
+}
+
+
+
+
+@*@using (Html.BeginForm("Index", "Student", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}*@
+
+@{
+    if (Model.Count() == 0) 
+    { 
+        <p style="text-align:center">موردی وجود ندارد</p>
+    }
+    else
+    {
+        <table class="table" >
+            <tr  >
+                <th>
+                    ID
+                    @*@Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })*@
+                </th>
+                <th>
+                    عنوان
+                </th>
+                <th>
+                    @*@Html.ActionLink("Enrollment Date", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })*@
+                    توضیحات
+                </th>
+                <th>
+
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr  >
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td style="width:50%; text-align:right">
+                        @Html.DisplayFor(modelItem => item.description)
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("ویرایش", "Edit", new { id = item.ID }, new { style = "background-color: #26B99A;padding: 5px;color: #fff;border-radius: 5px;" }) |
+                        @{
+                var classname = "deleteproduct" + item.ID;
+                <a id=@item.ID class=@classname style="  margin:2px ; cursor: pointer; background-color: #26B99A; padding: 5px; color: #fff; border-radius: 5px;">حذف</a> @*@Html.ActionLink("حذف", "Delete", new { id = item.ID })*@
+                            <script>
+                                var classname = "deleteproduct" + @item.ID
+                                $("." + classname).click(function () {
+                                    $.ajax({
+                                        url: '/Admin/Delete',
+                                        dataType: 'html',
+                                        data: {
+                                            id: this.id,
+                                        },
+                                        success: function (data) {
+                                            toastr.options = {
+                                                "debug": false,
+                                                "positionClass": "toast-top-center",
+                                                "onclick": null,
+                                                "fadeIn": 300,
+                                                "fadeOut": 1000,
+                                                "timeOut": 5000,
+                                                "extendedTimeOut": 1000
+                                            }
+                                            toastr.success('محصول مورد نظر حذف شد')
+                                            $.ajax({
+                                                url: '/Admin/GetTheListOfItems',
+                                                dataType: 'html',
+                                                success: function (data) {
+
+                                                    $('#listholder').html(data);
+                                                    $('#listholder').css("display", "block");
+                                                },
+                                                error: function () {
+                                                    alert("nashod")
+                                                }
+                                            });
+
+                                        },
+                                        error: function () {
+                                            alert("nashod")
+                                        }
+                                    });
+                                })
+                            </script>
+                        }
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+<br />
+@*Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount*@
+
+
+
+
+
+@Html.PagedListPager(Model, page => Url.Action("product", new { page }), PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions() { HttpMethod = "GET", UpdateTargetId = "listholder" }))
+
+        
+    }
+}
+
+

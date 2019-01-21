@@ -1,0 +1,145 @@
+﻿@model scarfproject.ViewModel.PaginationViewModel
+
+
+
+@{
+    var total = Convert.ToInt32(Model.totalrows);
+    var activ = Convert.ToInt32(Model.activerow);
+    var activminus2 = activ - 2;
+    var activminus1 = activ - 1;
+    var activplus1 = activ + 1;
+    var activplus2 = activ + 2;
+
+
+    @*<ul class="pagination">
+
+                 @for (int i = 1; i < activ & activ - i < 4; i++)
+                 {
+                     <li class="pagingnumber"><a>@i</a></li>
+                 }
+                 <li class="active"><a>@activ </a></li>
+                 @for (int i = activ + 1; i <= total & i - activ < 4; i++)
+                 {
+                     <li class="pagingnumber"><a>@i</a></li>
+                 }
+        </ul>*@
+
+    if ((total - activ) >4 & activ > 4)
+    {
+        <ul class="pagination">
+
+            <li><a>«</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>1</a></li>
+            <li><a>...</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activminus2</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activminus1</a></li>
+            <li class="active"><a>@activ</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activplus1</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activplus2</a></li>
+            <li><a>...</a></li>
+            <li><a>@total</a></li>
+            <li><a>»</a></li>
+        </ul>
+    }
+    else if ((total - activ > 4) && !(activ > 4))
+    {
+        <ul class="pagination">
+
+            @for (int i = 1; i < activ; i++)
+            {
+                <li style="cursor:pointer" class="pagingnumber"><a>@i</a></li>
+            }
+            <li class="active"><a>@activ </a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activplus1</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activplus2</a></li>
+            <li><a >...</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@total</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+
+    }
+    else if (!(total - activ > 4) && activ > 4)
+    {
+        <ul class="pagination">
+
+            <li><a>«</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>1</a></li>
+            <li><a>...</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activminus2</a></li>
+            <li style="cursor:pointer" class="pagingnumber"><a>@activminus1</a></li>
+            <li style="cursor:pointer" class="active"><a>@activ </a></li>
+            @for (int i = activ + 1; i <= total; i++)
+            {
+                <li style="cursor:pointer" class="pagingnumber"><a>@i</a></li>
+            }
+            <li><a>»</a></li>
+        </ul>
+
+    }
+    else if (total > 1 && !((total - activ) > 4) && !(activ > 4))
+    {
+
+        <ul class="pagination">
+
+            @for (int i = 1; i < activ; i++)
+            {
+                <li style="cursor:pointer" class="pagingnumber"><a>@i</a></li>
+            }
+            <li class="active"><a href="#">@activ</a></li>
+            @for (int i = activ + 1; i <= total; i++)
+            {
+                <li style="cursor:pointer" class="pagingnumber"><a>@i</a></li>
+            }
+
+        </ul>
+
+    }
+
+}
+
+<script>
+    $(".pagingnumber").click(function () {
+        var num = this.textContent;
+        $.ajax({
+            url: '/Home/changesubcatid',
+            dataType: 'html',
+            data: {
+                id: num,
+            },
+            success: function (data) {
+                if(data === "1")
+                {
+                    $.ajax({
+                        url: '/Home/gogetproductlist',
+                        dataType: 'html',
+                        success: function (data) {
+
+                            $('#productlist').html(data);
+
+                        },
+                        error: function () {
+                            alert("nashod")
+                        }
+                    });
+                    $.ajax({
+                        url: '/Home/gogetpagination',
+                        dataType: 'html',
+
+                        success: function (data) {
+
+                            $('#productlist2').html(data);
+
+                        },
+                        error: function () {
+                            alert("nashod")
+                        }
+                    });
+                }
+            },
+            error: function () {
+
+            }
+       
+        })
+    })
+</script>

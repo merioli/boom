@@ -1,0 +1,59 @@
+﻿@model scarfproject.ViewModel.MezonProductDetailList
+
+@*<h3><span>Latest </span>Collections</h3>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>*@
+
+
+
+
+@{
+    foreach (var item in Model.data)
+    {
+        string ID = item.ID.ToString();
+       
+       
+
+
+
+        <div class="col-md-4 electro-right text-center" style="padding:2%">
+            <div class="electro-img-rt mask">
+                <div class="content-grid-effect slow-zoom vertical">
+                    <div class="img-box"><img src=@item.image1 alt="image" class="img-responsive zoom-img"></div>
+                    <div class="info-box">
+                        <div class="info-content electro-text simpleCart_shelfItem">
+                            <h4>@item.title</h4>
+                            @*<span class="separator"></span>
+    <h4 style="direction:rtl"><span class="item_price">@price</span> تومان</h4>
+    <span class="separator"></span>
+    <a id=@addtocartid class="item_add hvr-outline-out button2 addtocart" href="#">add to cart </a>*@
+                            <a id=@ID class="item_add hvr-outline-out button2 gotodetail" href="#">Quick View </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    }
+}
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('.gotodetail').click(function () {
+
+            var ID = this.id;
+            var url = "/Home/ProductDetail?id=" + ID;
+            window.location.href = url;
+        })
+       
+
+
+    })
+
+</script>

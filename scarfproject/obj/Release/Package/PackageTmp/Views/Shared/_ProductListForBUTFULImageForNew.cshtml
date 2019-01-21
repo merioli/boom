@@ -1,0 +1,319 @@
+﻿@model scarfproject.ViewModel.ListAndPaginationViewModel 
+
+
+
+
+
+<script>
+   
+    $('.showmedetail').click(function () {
+
+
+        var ID = this.id;
+        var url = "/Home/ProductDetail?id=" + ID;
+        window.location.href = url;
+    })
+    $('.addtocart').click(function () {
+        var ID = this.id;
+
+        //var pricetotal = document.getElementById("spanfortotal").textContent;
+        var tobeadded = $('.item_price', $(this).parent('div:first')).text();
+        //var counttotal = document.getElementById("simpleCart_quantityy").textContent;
+        //var final = parseInt(pricetotal, 10) + parseInt(tobeadded, 10);
+        //var finalcount = parseInt(counttotal, 10) + 1;
+        //$('#spanfortotal').text(final);
+        //$('#simpleCart_quantityy').text(finalcount)
+
+
+
+
+        $.ajax({
+            url: '/Home/addtocart',
+            dataType: 'html',
+            data: {
+                id: ID,
+                price: tobeadded
+
+            },
+            success: function (data) {
+                //$.ajax({
+                //    url: '/Home/gogetfinalprice',
+
+
+                //    success: function (data) {
+                //        $("#spanfortotal").text(data).toString("###,###")
+                //        $("#spanfortotal2").text(data)
+
+                //    },
+                //    error: function () {
+
+                //    }
+                //});
+                $.ajax({
+                    url: '/Home/gogetfinalquantity',
+
+
+                    success: function (data) {
+                        $("#simpleCart_quantityy").text(data)
+
+                    },
+                    error: function () {
+
+                    }
+                });
+
+                toastr.options = {
+                    "debug": false,
+                    "positionClass": "toast-top-center",
+                    "onclick": null,
+                    "fadeIn": 300,
+                    "fadeOut": 1000,
+                    "timeOut": 5000,
+                    "extendedTimeOut": 1000,
+
+
+                }
+                toastr.success('محصول مورد نظر به سبد اضافه شد')
+
+
+
+            },
+            error: function () {
+
+            }
+        });
+
+
+    })
+
+</script>
+
+
+
+    
+   
+        @{
+            foreach (var item in Model.list)
+            {
+                string imagefile = "placeholder.jpg";
+                if (item.imagelist != null)
+                {
+                    imagefile = item.imagelist.First().title.ToString();
+                }
+                string ID = "o"+ item.ID.ToString();
+                string addtocartid = "addtocart" + ID;
+                string price = item.productprice;
+
+                
+
+              
+            <div class="col-md-3 product-men" style="margin-bottom:25px">
+            <div class="men-pro-item simpleCart_shelfItem">
+                <div class="men-thumb-item">
+                    <img style="height:350px" src="@Url.Action("Thumbnail", "Home", new { filename = imagefile })" alt="" class="pro-image-front">
+                    <img style="height:350px" src="@Url.Action("Thumbnail", "Home", new { filename = imagefile })" alt="" class="pro-image-back">
+                    
+
+                    <div class="men-cart-pro">
+                        <div class="inner-men-cart-pro">
+                            <a id=@ID class="link-product-add-cart showmedetail">مشاهده جزئیات</a>
+                            
+                        </div>
+                    </div>
+                    @{
+                    if (item.isActive == "0")
+                    {
+                    <span class="product-new-top">تمام شد</span>
+                    }
+                    else if (item.IsNew == "1" && item.IsOffer == "1")
+                    {
+                       <span class="product-new-top">جدید/تخفیف</span>
+                    }
+                    else if (item.IsNew != "1" && item.IsOffer == "1")
+                    {
+                        <span class="product-new-top">تخفیف</span>
+                    }
+                    else if (item.IsNew == "1" && item.IsOffer != "1")
+                    {
+                        <span class="product-new-top">جدید</span>
+                    }
+
+                     }
+                  
+                </div>
+                <div class="item-info-product ">
+                    <h4><a href="single.html">@item.title</a></h4>
+                    <div class="info-product-price">
+                        @if (item.PriceNow == "0")
+                        {
+                            <span class="item_price">قیمت توافقی </span>
+                        }
+                        else
+                        {
+                            <span class="item_price"><span class="item_price"> @item.vahed </span>تومان @item.PriceNow </span>
+                        }
+                       @if (item.IsOffer == "1")
+                        {
+                           <del>@item.productprice</del>
+                        }
+                        
+                    </div>
+                    @{
+                if (item.isActive == "1")
+                        {
+                         <a id=@addtocartid class="item_add single-item hvr-outline-out button2 addtocart"><i class="glyphicon glyphicon-plus-sign" ></i>سبد خرید</a>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+
+
+
+            }
+        }
+    
+   
+
+
+<div class="col-lg-12 col-md-12" >
+    @{
+        var total = Convert.ToInt32(Model.totalrows);
+        var activ = Convert.ToInt32(Model.activerow);
+        var activminus2 = activ - 2;
+        var activminus1 = activ - 1;
+        var activplus1 = activ + 1;
+        var activplus2 = activ + 2;
+
+
+        @*<ul class="pagination">
+
+                     @for (int i = 1; i < activ & activ - i < 4; i++)
+                     {
+                         <li class="pagingnumber"><a>@i</a></li>
+                     }
+                     <li class="active"><a>@activ </a></li>
+                     @for (int i = activ + 1; i <= total & i - activ < 4; i++)
+                     {
+                         <li class="pagingnumber"><a>@i</a></li>
+                     }
+            </ul>*@
+
+        if ((total - activ) > 3 & activ > 3)
+        {
+            <ul class="pagination">
+
+                <li><a>«</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>1</a></li>
+                <li><a>...</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus2</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus1</a></li>
+                <li class="active"><a>@activ</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus1</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus2</a></li>
+                <li> ...</li>
+                <li><a>@total</a></li>
+                <li><a>»</a></li>
+            </ul>
+        }
+        else if ((total - activ > 3) && !(activ > 3))
+        {
+            <ul class="pagination">
+
+                @for (int i = 1; i < activ; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+                }
+                <li class="active"><a>@activ </a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus1</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activplus2</a></li>
+                <li><a href="#">...</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@total</a></li>
+                <li><a href="#">»</a></li>
+            </ul>
+
+        }
+        else if (!(total - activ > 3) && activ > 3)
+        {
+            <ul class="pagination">
+
+                <li><a>«</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>1</a></li>
+                <li><a>...</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus2</a></li>
+                <li style="cursor:pointer" class="pagingnumberfornew"><a>@activminus1</a></li>
+                <li style="cursor:pointer" class="active"><a>@activ </a></li>
+                @for (int i = activ + 1; i <= total; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+                }
+                <li><a>»</a></li>
+            </ul>
+
+        }
+        else if (total > 1 && !((total - activ) > 3) && !(activ > 3))
+        {
+
+            <ul class="pagination">
+
+                @for (int i = 1; i < activ; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+                }
+                <li class="active"><a href="#">@activ</a></li>
+                @for (int i = activ + 1; i <= total; i++)
+                {
+                    <li style="cursor:pointer" class="pagingnumberfornew"><a>@i</a></li>
+                }
+
+            </ul>
+
+        }
+
+    }
+
+    <script>
+        $(".pagingnumberfornew").click(function () {
+            var num = this.textContent;
+            $.ajax({
+                url: '/Home/specialpaginationid',
+                dataType: 'html',
+                data: {
+                    subcatid: num,
+                },
+                success: function (data) {
+                    if (data === "1") {
+                        $.ajax({
+                            url: '/Home/gogetproductlist',
+                            dataType: 'html',
+                            data: {
+                                extramode: "0",
+                            },
+                            success: function (data) {
+                               
+                                $('#newcontenthere').html(data);
+                                window.scrollTo(0, 1000);
+
+
+                            },
+                            error: function () {
+                                alert("nashod")
+                            }
+                        });
+                        
+                    }
+                },
+                error: function () {
+
+                }
+
+            })
+        })
+    </script>
+
+</div>
+
+
+
+

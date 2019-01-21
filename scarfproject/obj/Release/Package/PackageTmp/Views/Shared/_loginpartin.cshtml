@@ -1,0 +1,274 @@
+﻿
+@model scarfproject.ViewModel.userdata
+<div class="login" style="direction:rtl">
+   
+    <div id="logindiv" >
+        <div class="row" style="margin:auto">
+            <div style="display: inline-block">
+                <a id="LogOff" style="margin-top:10px; cursor:pointer"><img style="width:50px" src="/images/logoff.png" /></a>
+            </div>
+            @{
+                if (Model.code == "1")
+                {
+                     <div style="display:inline-block" >
+                       <a id="Profile" style="margin-top:10px; cursor:pointer"><img style="width:50px" src="/images/profile.png" /></a>
+                      </div>
+                }
+            }
+           
+        </div>
+       
+        <script>
+            $("#LogOff").click(function () {
+                var url = "/CustomerLogin/LogOff";
+                window.location.href = url;
+            })
+            $("#Profile").click(function () {
+                var url = "/Home/Profile";
+                window.location.href = url;
+            })
+        </script>
+      
+    </div>
+    
+    
+</div>
+<script>
+    $(document).ready(function () {
+
+        document.getElementById("forgetclickevent").onclick = function () {
+
+
+            $("#submitdiv").css("display", "none");
+            $("#logindiv").css("display", "none");
+            $("#forgetdiv").css("display", "block");
+
+        }
+        document.getElementById("gobacktologin").onclick = function () {
+
+
+            $("#submitdiv").css("display", "block");
+            $("#logindiv").css("display", "block");
+            $("#forgetdiv").css("display", "none");
+
+        }
+
+        function isValidEmailAddress(emailAddress) {
+            var pattern = /^([a-zA-Z0-9_.+-])+\@@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return pattern.test(emailAddress);
+        };
+        function isValidPhonenumber(phonenumber) {
+            var pattern = /^09[0-9]{9}$/;
+            return pattern.test(phonenumber);
+        };
+        function isNotNull(str) {
+            var pattern = /^[A-Za-z0-9]{1,20}$/;
+            return pattern.test(str);
+        };
+
+
+        document.getElementById("lgnsubmitt").onclick = function () {
+
+            var Email = $("#login-email").val();
+            // var Phone = $("#signin-phone").val();
+            var Pass = $("#login-password").val();
+            var ischecked;
+            if ($("#rememberme").is(":checked")) {
+                ischecked = "checked";
+            }
+            else {
+                ischecked = "unchecked";
+            }
+
+
+
+            if (isValidEmailAddress(Email) & isNotNull(Pass)) {
+
+                $('#lbllogin').text("درحال پردازش ...");
+                $.ajax({
+                    url: '/CustomerLogin/CustomerLogin',
+                    dataType: 'html',
+                    data: {
+                        email: Email,
+                        pass: Pass,
+                        ischecked: ischecked
+                    },
+                    success: function (data) {
+
+
+                        if (data === "2") {
+                            $('#lbllogin').text("نام کاربری یا رمز عبور اشتباه است");
+                        }
+                        else {
+
+
+                            $('#lbllogin').text("با موفیت وارد شدید");
+                            var url = "/Home/Index";
+                            window.location.href = url;
+                        }
+
+
+                    },
+                    error: function () {
+                        $('#lbllogin').text("خطا در سرور");
+                    }
+                });
+            }
+            else {
+                if (!isValidEmailAddress(Email)) {
+                    $('#lbllogin').text('ایمیل صحیح وارد نمایید')
+                }
+                else if (!isNotNull(Pass)) {
+                    $('#lbllogin').text('رمز عبور را وارد نمایید')
+                }
+                else if (!isNotNull(Pass) & !isValidEmailAddress(Email)) {
+                    $('#lbllogin').text('ایمیل صحیح وارد نمایید، ' + 'رمز عبور را وارد نمایید')
+                }
+
+
+            }
+
+        }
+        document.getElementById("subscribesubmit").onclick = function () {
+
+            $('#lblsubscribeSubmit').text("");
+            var rpass = $("#Rsignup-password").val();
+            var Email = $("#signup-email").val();
+            var Pass = $("#signup-password").val();
+
+            //var Phone = $("#signup-phon").val();
+
+            if (Pass === rpass) {
+                if (isValidEmailAddress(Email) & isNotNull(Pass)) {
+                    alert("raft")
+                    $('#lblsubscribeSubmit').text("درحال پردازش ...");
+                    $.ajax({
+                        url: '/CustomerLogin/CustomerRegister',
+                        dataType: 'html',
+                        data: {
+                            email: Email,
+                            pass: Pass,
+                            //phone: Phone
+                        },
+                        success: function (data) {
+
+                            if (data === "3") {
+                                $('#lblsubscribeSubmit').text("ایمیل وارد شده موجود است، لطفاً از ایمیل دیگری استفاده کنید");
+                            }
+
+                            else if (data === "2") {
+                                $('#lblsubscribeSubmit').text("خطای سیستمی، لطفاً با اپراتور تماس بگیرید");
+                            }
+                            else {
+                                $('#lblsubscribeSubmit').text("ثبت با موفقیت انجام شد");
+
+
+
+                            }
+
+
+
+
+                        },
+                        error: function () {
+                            $('#lblsubscribeSubmit').text("خطای سیستمی، لطفاً با اپراتور تماس بگیرید");
+                        }
+                    });
+                }
+                else {
+                    //if (!isValidPhonenumber(Phone)) {
+                    //    $('#lblsubscribeSubmit').append('شماره موبایل صحیح وارد کنید، ')
+
+                    //}
+                    if (!isValidEmailAddress(Email)) {
+                        $('#lblsubscribeSubmit').append('ایمیل صحیح وارد نمایید، ')
+                    }
+                    if (isNotNull(Pass)) {
+                        $('#lblsubscribeSubmit').append('رمز عبور را وارد نمایید ')
+                    }
+
+
+
+
+                }
+            }
+            else {
+                $('#lblsubscribeSubmit').append('تکرار رمز عبور مطابقت ندارد')
+            }
+
+
+
+
+            // if (isValidEmailAddress(Email) & isNotNull(Pass) & isValidPhonenumber(Phone)) {
+
+
+        }
+
+        document.getElementById("forgetpassword").onclick = function () {
+
+
+            var Email = $("#emailforget").val();
+
+            alert("lll");
+
+            if (isValidEmailAddress(Email)) {
+
+                $('#lblforgeteSubmit').text("درحال پردازش ...");
+                $.ajax({
+                    url: '/CustomerLogin/ForgetPass',
+                    dataType: 'html',
+                    data: {
+                        email: Email
+
+
+                    },
+                    success: function (data) {
+
+                        if (data === "1") {
+                            $('#lblforgeteSubmit').text(" لینک بازنشانی نام ورود به ایمیل شما ارسال شد. ");
+                        }
+
+                        else if (data === "2") {
+                            $('#lblforgeteSubmit').text("خطای سیستم");
+                        }
+                        else if (data === "3") {
+                            $('#lblforgeteSubmit').text("ایمیل وارد شده وجود ندارد");
+                        }
+                        else {
+                            $('#lblforgeteSubmit').text(data)
+                        }
+
+
+                    },
+                    error: function () {
+                        $('#lblforgeteSubmit').text("خطا در سرور");
+                    }
+                });
+            }
+            else {
+
+                $('#lblforgeteSubmit').text('ایمیل صحیح وارد نمایید')
+
+
+
+
+            }
+
+        }
+
+    })
+</script>
+
+
+
+
+
+
+@*<h3> خوش آمدید</h3>
+<a class="submit" id="LogOff" style="margin-top:10px">خروج</a>
+<script>
+    $("#LogOff").click(function () {
+        var url = "/CustomerLogin/LogOff";
+        window.location.href = url;
+    })
+</script>*@

@@ -1,0 +1,714 @@
+﻿@model AdminPanel.ViewModel.Datumm
+
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Edit";
+}
+
+
+<div class="row">
+
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h4 style="display: inline-block;"> جزئیات محصول</h4>
+                <ul class="nav navbar-left panel_toolbox">
+                    <li>
+                        <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="#">Settings 1</a>
+                            </li>
+                            <li>
+                                <a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <div id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+
+
+
+
+                    <div id="sec1">
+                        <div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">
+                                نام :
+                            </label>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <p class=" col-md-7 col-xs-12">@Model.title</p>
+                            </div>
+
+
+
+
+                        </div>
+                        @{
+                            if (Model.color != null)
+                            {
+                                <div id="clholder" style="background-color : @Model.color" class="form-group rowholder">
+                                    <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                        رنگ :
+                                    </label>
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <p class=" col-md-7 col-xs-12">
+
+                                        </p>
+
+                                    </div>
+
+
+                                </div>
+
+                                foreach (var item in Model.filters.filters)
+                                {
+                                    <div id="clholder" style="background-color : @Model.color" class="form-group rowholder">
+                                        <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                            @item.filtername
+                                        </label>
+                                        <div class="col-md-5 col-sm-5 col-xs-12">
+                                            @if (item.filterdetailes != null)
+                                            {
+                                                foreach (var dename in item.filterdetailes)
+                                                {
+                                                    if (Model.productfilterlist.filters != null)
+                                                    {
+                                                        if (Model.productfilterlist.filters.Any(s => s.detailname.Contains(dename.detailname)))
+                                                        {
+                                                            <p class="" style="display:inline-block">@dename.detailname,</p>
+                                                        }
+                                                    }
+
+                                                }
+                                            }
+
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        }
+
+                        <div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                قیمت :
+                            </label>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <p class=" col-md-7 col-xs-12">@Model.productprice</p>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                تخفیف :
+                            </label>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <p class=" col-md-7 col-xs-12">@Model.discount</p>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                شماره گروه :
+                            </label>
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                <p class=" col-md-7 col-xs-12">@Model.SetId</p>
+                            </div>
+
+                        </div>
+                        <div class="form-group rowholder">
+                            <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">
+                                توضیحات :
+                            </label>
+
+                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                @*<textarea id="productdesc" required="required" class="form-control" name="productdesc" style="height:170px"></textarea>*@
+                                <p> @Model.description</p>
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="form-group rowholder">
+                            <div class="col-md-12 col-sm-12 col-xs-12 control-label">
+                                گالری محصول:
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:5%">
+
+                                @{
+                                    if (Model.imagelist != null)
+                                    {
+
+                                        foreach (var item in Model.imagelist)
+                                        {
+                                            string ID = item.ID.ToString();
+                                            string deletetid = "addtocart" + ID;
+                                            string title = "titleof" + ID;
+                                            string id = Model.ID;
+
+                                            <div class="imagelistholder">
+
+                                                <div class="con">
+
+                                                    <img src="@Url.Action("Thumbnail", "Admin", new { filename = item.title })" data-imagezoom="true" class=" back">
+                                                </div>
+
+
+
+
+                                            </div>
+
+                                        }
+                                    }
+
+
+
+
+                                }
+
+                                <div style="display:none" id="orderidholder">@Model.ID</div>
+                                <script>
+
+
+                                    $(".deleteimage").click(function () {
+
+                                        var orderid = $("#orderidholder").text();
+                                        var id = this.id;
+                                        var res = id.substring(9, id.length);
+                                        var titleid = "titleof" + res;
+                                        var name = $('#' + titleid).text();
+
+
+
+
+
+
+                                        $.ajax({
+                                            url: '/Admin/Deleteimage',
+                                            dataType: 'html',
+                                            data: {
+                                                id: id,
+                                                title: name
+                                            },
+                                            success: function (data) {
+                                                window.location.href = "/Admin/Edit?id =" + orderid;
+                                                window.location.reload();
+                                            },
+                                            error: function () {
+
+                                            }
+                                        });
+                                    })
+                                </script>
+
+                            </div>
+
+
+
+                        </div>
+                        <div class="form-group">
+
+                            <a id="editbutt" class="lgnsubmitt">ویرایش</a>
+                            <script>
+                                $("#editbutt").click(function () {
+
+                                    $("#sec1").css("display", "none");
+                                    $("#sec2").css("display", "block");
+
+
+
+                                })
+
+                            </script>
+
+                        </div>
+
+                    </div>
+                    <div id="sec2" style="display:none">
+                        @using (Html.BeginForm("Edit", "Admin", FormMethod.Post,
+                    new { enctype = "multipart/form-data", id = "signupformforedit" }))
+                        {
+                            @Html.HiddenFor(m => m.ID);
+
+                            <div class="form-group rowholder">
+                                <input id="inputallfilterid" name="inputallfilterid" type="hidden" />
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">
+                                    نام :
+                                </label>
+                                @{
+                            if (Model.title != "")
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    @Html.TextBoxFor(m => m.title, new { @class = "form-control col-md-7 col-xs-12", id = "title" })
+
+                                </div>
+
+                            }
+                            else
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    <input type="text" id="title" name="title" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            }
+                                }
+
+
+
+                            </div>
+                            <div style="background-color : @Model.color" id="colorholder" class="form-group rowholder">
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                    رنگ :
+                                </label>
+                                @{
+                            if (Model.color != "")
+                            {
+
+
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    @Html.DropDownListFor(m => m.color, Model.Colores, new { id = "productcolor", name = "productcolor", onchange = "Getcolorlist(this)", style = "width:100%", @class = "DRPd" })
+                                </div>
+
+
+                                    <script>
+
+                                        function Getcolorlist(productcolor) {
+                                            var selectedValue = productcolor.value;
+                                            $("#colorholder").css("background-color", selectedValue);
+
+                                        }
+                                        $(document).ready(function () {
+                                            $("#productcolor option").each(function () {
+                                                if ($(this).val() != '') {
+                                                    $(this).css('background-color', $(this).val());
+                                                }
+                                            });
+                                        });
+
+
+                                    </script>
+
+
+
+                            }
+                            else
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    @Html.DropDownListFor(m => m.color, Model.Colores, "--", new { id = "productcolor", name = "productcolor", onchange = "Getcolorlist(this)", style = "width:100%", @class = "DRPd" })
+                                </div>
+
+
+                                    <script>
+
+                                        function Getcolorlist(productcolor) {
+                                            var selectedValue = productcolor.value;
+                                            $("#colorholder").css("background-color", selectedValue);
+
+                                        }
+                                        $(document).ready(function () {
+                                            $("#productcolor option").each(function () {
+                                                if ($(this).val() != '') {
+                                                    $(this).css('background-color', $(this).val());
+                                                }
+                                            });
+                                        });
+
+
+                                    </script>
+                            }
+                                }
+
+
+                            </div>
+
+                            if (Model.filters.filters != null && Model.filters.filters.Count() > 0)
+                            {
+                                foreach (var myitem in Model.filters.filters)
+                                {
+                                    if (myitem.filterdetailes != null)
+                                    {
+                                        string ID = myitem.ID;
+                                        string filterdetailtitle = "DEFfilterdetailtitle" + ID;
+                                        string filterdetaillist = "DEFfilterdetaillist" + ID;
+
+                                        <div id="filtersholder" class="form-group rowholder">
+                                            <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                                                @myitem.filtername :
+                                            </label>
+
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <select id=@filterdetaillist name=filterdetaillist style="width:100%" class="DRPd " multiple>
+                                                    @if (myitem.filterdetailes != null)
+                                                    {
+                                                        if (myitem.filterdetailes != null)
+                                                        {
+                                                            foreach (var detail in myitem.filterdetailes)
+                                                            {
+                                                                if (Model.productfilterlist.filters != null)
+                                                                {
+                                                                    if (Model.productfilterlist.filters.Any(s => s.detailname.Contains(detail.detailname)))
+                                                                    {
+                                                                        <option value=@detail.ID selected> @detail.detailname</option>
+                                                                    }
+                                                                   else
+                                                                    {
+                                                                        <option value=@detail.ID> @detail.detailname</option>
+                                                                    }
+                                                                }
+                                                                 else
+                                                                    {
+                                                                        <option value=@detail.ID> @detail.detailname</option>
+                                                                    }
+
+
+
+                                                            }
+                                                        }
+
+                                                    }
+
+
+
+                                                </select>
+
+                                                <script>
+                                                    $(document).ready(function () {
+                                                        var ID = "@myitem.ID";
+                                                        var filterdetaillist = "DEFfilterdetaillist" + ID;
+                                                        var value = $('select#' + filterdetaillist).val();
+
+                                                        //$("#" + filterdetaillist + " option:selected").each(function () {
+                                                        //   alert( $(this).val());
+                                                        //})
+                                                        //var filterVALUE = $("#" + filterdetaillist + " option:selected").val();
+                                                        if ($("#" + filterdetaillist + " option:selected").length) {
+
+                                                            $("#allfilterid").append(ID + "-" + value + ";");
+
+                                                        }
+
+
+                                                        $('select#' + filterdetaillist).on('change', function () {
+                                                            //alert($(this).val());
+                                                            $("#allfilterid").append(ID + "-" + $(this).val() + ";");
+
+                                                        });
+
+
+                                                    })
+                                                </script>
+                                            </div>
+
+
+
+
+
+                                        </div>
+                                    }
+
+                                }
+                            }
+
+
+                            <p id="allfilterid" style="display:inline-block"></p>
+
+                            <div class="form-group rowholder">
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                    قیمت :
+                                </label>
+                                @{
+                            if (Model.productprice != "")
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    @Html.TextBoxFor(m => m.productprice, new { @class = "form-control col-md-7 col-xs-12", id = "productprice", name = "productprice" })
+
+                                </div>
+
+                            }
+                            else
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    <input type="text" id="productprice" name="productprice" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            }
+                                }
+
+
+                            </div>
+                            <div class="form-group rowholder">
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                    تخفیف :
+                                </label>
+                                @{
+                            if (Model.discount != "")
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    @Html.TextBoxFor(m => m.discount, new { @class = "form-control col-md-7 col-xs-12", name = "productprice", id = "productprice" })
+
+                                </div>
+
+                            }
+                            else
+                            {
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    <input type="text" id="discount" name="discount" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+                            }
+                                }
+
+
+                            </div>
+                            <div class="form-group rowholder">
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12">
+                                    شماره گروه :
+                                </label>
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    <input value=@Model.SetId type="text" id="SetID" name="SetID" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+
+                            </div>
+                            <div class="form-group rowholder">
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">
+                                    توضیحات :
+                                </label>
+
+                                <div class="col-md-5 col-sm-5 col-xs-12">
+                                    <textarea id="productdesc" required="required" class="form-control" name="productdesc" style="height:170px">@Model.description</textarea>
+                                </div>
+
+
+
+
+
+                            </div>
+                            <div class="form-group rowholder">
+
+                                <label class="control-label col-md-2 col-sm-2 col-xs-12 ">آپلود عکس:</label>
+                                <input class="col-md-4 col-sm-4 col-xs-12 " style="display: inline-block; float: right" id="fileupload" type="file" name="file" multiple="multiple" accept="image/*">
+                                <div class="col-md-4 col-sm-4 col-xs-12 " style="direction:rtl">
+                                    @*<button class="btn btn-primary" type="button">Cancel</button>
+                                        <button class="btn btn-primary" type="reset">Reset</button>*@
+                                    @* <button id="CRprocuct" class="btn btn-success" onclick="CRproductclicked(CRprocuct)">تایید</button>*@
+                                    @*<div id="CRprocuct" class="btn btn-success" onclick="CRproductclicked(CRprocuct)">تایید</div>*@
+
+                                    @*<script>
+                                            function CRproductclicked(CRprocuct) {
+
+                                                var name = $("#productname").val();
+                                                var desc = $("#productdesc").val();
+                                                var file = $("#productdesc").val();
+
+
+
+
+
+                                                if (name != ""  & desc != "") {
+                                                    $("#signupformforedit").submit();
+                                                }
+
+                                                else {
+                                                    toastr.options = {
+                                                        "debug": false,
+                                                        "positionClass": "toast-top-center",
+                                                        "onclick": null,
+                                                        "fadeIn": 300,
+                                                        "fadeOut": 1000,
+                                                        "timeOut": 5000,
+                                                        "extendedTimeOut": 1000
+                                                    }
+                                                    toastr.error('تمامی موارد را کامل کنید')
+                                                }
+
+
+                                            }
+                                        </script>*@
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:5%">
+
+                                    @{
+                            if (Model.imagelist != null)
+                            {
+
+                                foreach (var item in Model.imagelist)
+                                {
+                                    string ID = item.ID.ToString();
+                                    string deletetid = "addtocart" + ID;
+                                    string title = "titleof" + ID;
+                                    string id = Model.ID;
+
+                                    <div class="imagelistholder">
+
+                                        <div class="con">
+
+                                            <img src="@Url.Action("Thumbnail", "Admin", new { filename = item.title })" data-imagezoom="true" class=" back">
+                                            <button id=@deletetid class="btn deleteimage">حذف</button>
+                                            <div style="display:none" id=@title>@item.title</div>
+                                        </div>
+
+                                        <style>
+                                            .imagelistholder {
+                                                display: inline-block;
+                                                width: 200px;
+                                                padding: 5px;
+                                                border: 1px solid #eee;
+                                                box-shadow: 3px 3px #eee;
+                                                border-radius: 25px;
+                                            }
+
+                                            .con {
+                                                position: relative;
+                                                width: 100%;
+                                            }
+
+                                                /* Make the image responsive */
+                                                .con img {
+                                                    width: 100%;
+                                                    height: auto;
+                                                    border-radius: 25px;
+                                                }
+
+                                                /* Style the button and place it in the middle of the container/image */
+                                                .con .btn {
+                                                    position: absolute;
+                                                    top: 50%;
+                                                    left: 50%;
+                                                    transform: translate(-50%, -50%);
+                                                    -ms-transform: translate(-50%, -50%);
+                                                    background-color: #555;
+                                                    color: white;
+                                                    font-size: 16px;
+                                                    padding: 12px 24px;
+                                                    border: none;
+                                                    cursor: pointer;
+                                                    border-radius: 5px;
+                                                }
+
+                                                    .con .btn:hover {
+                                                        background-color: black;
+                                                    }
+                                        </style>
+
+
+                                    </div>
+
+                                }
+                            }
+
+
+
+
+                                    }
+
+                                    <div style="display:none" id="orderidholder">@Model.ID</div>
+                                    <script>
+
+
+                                        $(".deleteimage").click(function () {
+
+                                            var orderid = $("#orderidholder").text();
+                                            var id = this.id;
+                                            var res = id.substring(9, id.length);
+                                            var titleid = "titleof" + res;
+                                            var name = $('#' + titleid).text();
+
+
+
+
+
+
+                                            $.ajax({
+                                                url: '/Admin/Deleteimage',
+                                                dataType: 'html',
+                                                data: {
+                                                    id: id,
+                                                    title: name
+                                                },
+                                                success: function (data) {
+                                                    window.location.href = "/Admin/Edit?id =" + orderid;
+                                                    window.location.reload();
+                                                },
+                                                error: function () {
+
+                                                }
+                                            });
+                                        })
+                                    </script>
+
+                                </div>
+
+
+
+                            </div>
+
+                        }
+
+                        <div class="form-group">
+
+                            <a id="editproduct" class="lgnsubmitt">تایید</a>
+                            <script>
+                                $("#editproduct").click(function () {
+
+                                    var name = $("#title").val();
+                                    var desc = $("#productdesc").val();
+                                    var file = $("#fileupload").val();
+                                    var filters = $("#allfilterid").text();
+                                    $("#inputallfilterid").val(filters);
+
+                                    if (name != null & desc != null) {
+                                        $("#signupformforedit").submit();
+                                    }
+
+                                    else {
+                                        toastr.options = {
+                                            "debug": false,
+                                            "positionClass": "toast-top-center",
+                                            "onclick": null,
+                                            "fadeIn": 300,
+                                            "fadeOut": 1000,
+                                            "timeOut": 5000,
+                                            "extendedTimeOut": 1000
+                                        }
+                                        toastr.error('تمامی موارد را کامل کنید')
+                                    }
+
+
+                                })
+
+                            </script>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class=" ln_solid"></div>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,119 @@
+﻿@model AdminPanel.ViewModel.productDetailPageViewModel
+
+
+@{
+    if (Model.filterlist.filters != null && Model.filterlist.filters.Count() > 0)
+    {
+        foreach (var myitem in Model.filterlist.filters)
+    {
+        if (myitem.filterdetailes != null)
+        {
+             string ID = myitem.ID;
+        string filterdetailtitle = "DEFfilterdetailtitle" + ID;
+        string filterdetaillist = "DEFfilterdetaillist" + ID;
+
+        <div id="filtersholder" class="form-group rowholder">
+            <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+                @myitem.filtername :
+            </label>
+
+            <div class="col-md-5 col-sm-5 col-xs-12">
+                <select id=@filterdetaillist name=filterdetaillist style="width:100%" class="DRPd " multiple>
+                    @if (myitem.filterdetailes != null)
+                    {
+                        foreach (var detail in myitem.filterdetailes)
+                        {
+
+                            <option value=@detail.ID> @detail.detailname</option>
+                        }
+                    }
+
+
+
+                </select>
+             
+                <script>
+                    $(document).ready(function () {
+                        var ID = "@myitem.ID";
+                        var filterdetaillist = "DEFfilterdetaillist" + ID;
+                        var filterVALUE = $("#" + filterdetaillist + " option:selected").val();
+                        //$("#allfilterid").append(ID + "-" + filterVALUE + ",");
+                        $('select#' + filterdetaillist).on('change', function () {
+                            //alert($(this).val());
+                            $("#allfilterid").append(ID + "-" + $(this).val() + ";");
+                            
+                        });
+                        
+                         
+                    })
+                </script>
+            </div>
+
+
+
+
+
+        </div>
+        }
+       
+    }
+    }
+    
+}
+
+
+
+
+
+@{
+    if (Model.Colores.Count() > 0)
+    {
+        <div id="colorholder" class="form-group rowholder">
+    <label class="control-label col-md-2 col-sm-2 col-xs-12" style="text-align: right">
+        رنگ :
+    </label>
+
+    <div class="col-md-5 col-sm-5 col-xs-12">
+        @Html.DropDownListFor(m => m.SelectedColor, Model.Colores, "--", new { id = "productcolor", name = "productcolor", onchange = "Getcolorlist(this)", style = "width:100%", @class = "DRPd" })
+    </div>
+
+
+    <script>
+
+        function Getcolorlist(productcolor) {
+            var selectedValue = productcolor.value;
+            $("#colorholder").css("background-color", selectedValue);
+
+        }
+        $(document).ready(function () {
+            $("#productcolor option").each(function () {
+                if ($(this).val() != '') {
+                    $(this).css('background-color', $(this).val());
+                }
+            });
+        });
+
+
+    </script>
+
+    @*<div class="col-md-5 col-sm-5 col-xs-12">
+            <div >
+                <input type="text" id="productcolor" name="productcolor" required="required" class="form-control col-md-7 col-xs-12">
+            </div>
+            <script src="//code.jquery.com/jquery-3.2.1.js"></script>
+            <script src="~/Scripts/bootstrap-colorpicker.js"></script>
+            <script>
+                $(function () {
+                    $('#productcolor').colorpicker();
+                });
+            </script>
+
+
+        </div>*@
+
+</div>
+    }
+}
+
+
+
